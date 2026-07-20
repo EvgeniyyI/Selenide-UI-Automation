@@ -74,9 +74,9 @@ public class LoginPage {
         return this;
     }
 
-//    public ProfilePage successLoginShouldRedirectToProfile() {
-//        return new ProfilePage().shouldBeOpened();
-//    }
+    public ProfilePage successLoginShouldRedirectToProfile() {
+        return new ProfilePage().shouldBeOpened();
+    }
 
     public LoginPage shouldStayOnLoginPage() {
         title.shouldHave(exactText("Вход"));
