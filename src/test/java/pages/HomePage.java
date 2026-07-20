@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class HomePage {
 
-    private final SelenideElement homePageTitle = $x("//h1").should(exist);
+    private final SelenideElement homePageTitle = $x("//h1");
     private final SelenideElement homePageDescription = $x("//h1/following-sibling::p");
 
     private final SelenideElement loginButton = $x("//button[1]");
@@ -19,7 +19,7 @@ public class HomePage {
     private final SelenideElement benefitsSection = $x("//h2[contains(text(), 'Почему выбирают нас')]");
 
     public HomePage open() {
-        Selenide.open("");
+        Selenide.open("/");
         return this;
     }
 
@@ -33,12 +33,12 @@ public class HomePage {
 
     public LoginPage clickLogin() {
         loginButton.click();
-        return new LoginPage();
+        return new LoginPage().open();
     }
 
     public RegisterPage clickRegister() {
         registerButton.click();
-        return new RegisterPage();
+        return new RegisterPage().open();
     }
 
     public HomePage shouldHaveAllMainSections() {

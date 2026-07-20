@@ -11,7 +11,7 @@ public class TestConfig {
         Configuration.headless = false;
         Configuration.timeout = 10000;
         Configuration.browserSize = "1920x1080";
-        Configuration.baseUrl = "http://localhost:5173/";
+        Configuration.baseUrl = "http://localhost:5173";
         Configuration.fastSetValue = true;
 //       Configuration.savePageSource = true;
 //       Configuration.screenshots = true;

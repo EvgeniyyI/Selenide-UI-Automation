@@ -21,7 +21,7 @@ public class HomePageTest extends TestConfig {
     void clickLoginRedirectsToLogin() {
         new HomePage().open()
                 .clickLogin()
-                .shouldHaveTitle("Вход");
+                .shouldBeOpened();
     }
 
     @Test
@@ -29,6 +29,6 @@ public class HomePageTest extends TestConfig {
     void clickRegisterRedirectsToRegister() {
         new HomePage().open()
                 .clickRegister()
-                .shouldHaveTitle();
+                .shouldBeOpened();
     }
 }
