@@ -8,12 +8,10 @@ import pages.HomePage;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class HomePageTest extends TestConfig {
-    private final static String BASE_URL = "";
-
     @Test
     @DisplayName("Главная страница открывается для неавторизованного пользователя")
     void homePageForGuest() {
-        new HomePage(BASE_URL)
+        new HomePage().open()
                 .shouldBeOpenedAsGuest()
                 .shouldHaveAllMainSections();
     }
@@ -21,7 +19,7 @@ public class HomePageTest extends TestConfig {
     @Test
     @DisplayName("Клик по кнопке 'Войти' переводит на страницу логина")
     void clickLoginRedirectsToLogin() {
-        new HomePage(BASE_URL)
+        new HomePage().open()
                 .clickLogin()
                 .shouldHaveTitle("Вход");
     }
@@ -29,7 +27,7 @@ public class HomePageTest extends TestConfig {
     @Test
     @DisplayName("Клик по кнопке 'Почему выбирают нас' переводит на страницу регистрации")
     void clickRegisterRedirectsToRegister() {
-        new HomePage(BASE_URL)
+        new HomePage().open()
                 .clickRegister()
                 .shouldHaveTitle();
     }

@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class HomePage {
 
-    private final SelenideElement homePageTitle = $x("//h1");
+    private final SelenideElement homePageTitle = $x("//h1").should(exist);
     private final SelenideElement homePageDescription = $x("//h1/following-sibling::p");
 
     private final SelenideElement loginButton = $x("//button[1]");
@@ -18,9 +18,9 @@ public class HomePage {
     private final SelenideElement howItWorksSection = $x("//h2[contains(text(),'Как это работает')]");
     private final SelenideElement benefitsSection = $x("//h2[contains(text(), 'Почему выбирают нас')]");
 
-    public HomePage(String url)
-    {
-        Selenide.open(url);
+    public HomePage open() {
+        Selenide.open("");
+        return this;
     }
 
     public HomePage shouldBeOpenedAsGuest() {
@@ -44,7 +44,6 @@ public class HomePage {
     public HomePage shouldHaveAllMainSections() {
         howItWorksSection.shouldBe(visible);
         benefitsSection.shouldBe(visible);
-
         return this;
     }
 

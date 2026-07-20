@@ -18,11 +18,10 @@ public class MenuPageTest extends TestConfig {
 
     private MenuPage menuPage;
     private HomePage homePage;
-    private final String BASE_URL = "/";
-    
+
     @BeforeEach
     void setUpMenu() {
-        homePage = new HomePage(BASE_URL);
+        homePage = new HomePage().open();
         menuPage = new MenuPage();
     }
     
